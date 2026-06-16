@@ -2,7 +2,7 @@
 
 [![npm](https://img.shields.io/npm/v/@supernova123/system-monitoring-mcp-server)](https://www.npmjs.com/package/@supernova123/system-monitoring-mcp-server)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Tests](https://img.shields.io/badge/tests-67%20passing-brightgreen)](#testing)
+[![Tests](https://img.shields.io/badge/tests-77%20passing-brightgreen)](#testing)
 
 MCP server for Linux system monitoring — CPU, memory, disk, network, processes, systemd services, and system logs. Agent-native structured interface for AI assistants like Claude, Cursor, and Copilot.
 
@@ -12,7 +12,7 @@ Most system monitoring tools (Prometheus, Grafana, Netdata) are designed for das
 
 **Companion server:** [Docker MCP Server](https://github.com/friendlygeorge/docker-mcp-server) for container-level monitoring. This server handles host-level monitoring. Together they cover the full infrastructure stack.
 
-## Features (18 Tools)
+## Features (19 Tools)
 
 | Tool | Description |
 |------|-------------|
@@ -178,7 +178,7 @@ CPU and system temperatures from /sys/class/thermal/thermal_zone*. Each entry in
 
 ## Testing
 
-67 unit tests covering all 17 tools:
+77 unit tests covering all 19 tools:
 
 ```bash
 npx vitest run

@@ -4,7 +4,7 @@
     "friendlygeorge"
   ],
   "title": "System Monitoring MCP Server",
-  "description": "17 tools for AI agent Linux system monitoring — CPU, memory, disk, network, processes, systemd services, system logs, and I/O stats. Agent-native host-level monitoring complement to Docker MCP.",
+  "description": "19 tools for AI agent Linux system monitoring — CPU, memory, disk, network, processes, systemd services, system logs, and I/O stats. Agent-native host-level monitoring complement to Docker MCP.",
   "tags": [
     "system-monitoring",
     "linux",
