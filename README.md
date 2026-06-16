@@ -2,8 +2,15 @@
 
 [![npm](https://img.shields.io/npm/v/@supernova123/system-monitoring-mcp-server)](https://www.npmjs.com/package/@supernova123/system-monitoring-mcp-server)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Tests](https://img.shields.io/badge/tests-67%20passing-brightgreen)](#testing)
 
 MCP server for Linux system monitoring — CPU, memory, disk, network, processes, systemd services, and system logs. Agent-native structured interface for AI assistants like Claude, Cursor, and Copilot.
+
+## Why This Exists
+
+Most system monitoring tools (Prometheus, Grafana, Netdata) are designed for dashboards and humans. This server gives AI agents structured, queryable access to the same data — no dashboards, no config files, no scraping. One tool call returns exactly what the agent needs.
+
+**Companion server:** [Docker MCP Server](https://github.com/friendlygeorge/docker-mcp-server) for container-level monitoring. This server handles host-level monitoring. Together they cover the full infrastructure stack.
 
 ## Features (17 Tools)
 
@@ -27,6 +34,33 @@ MCP server for Linux system monitoring — CPU, memory, disk, network, processes
 | `open_files` | List open files for a process via /proc/{pid}/fd symlinks |
 | `login_history` | Login/logout history from wtmp/btmp logs |
 
+## Comparison
+
+| Feature | This Server | node_exporter | Netdata | telegraf |
+|---------|------------|---------------|---------|----------|
+| **MCP native** | ✅ stdio | ❌ HTTP/REST | ❌ HTTP/REST | ❌ HTTP/REST |
+| **Agent-ready JSON** | ✅ structured | ⚠️ Prometheus format | ⚠️ JSON but nested | ⚠️ InfluxDB line protocol |
+| **Zero config** | ✅ | ❌ needs scraping | ❌ needs agent install | ❌ needs config file |
+| **Tool count** | 17 | ~200 metrics | ~1,000 metrics | ~300 inputs |
+| **Install weight** | ~5 MB | ~30 MB binary | ~200 MB | ~100 MB |
+| **Dependencies** | Node.js | None | C, many libs | Go |
+
+**When to use this:** You want an AI agent to query host metrics via MCP. Fast install, structured output, no infrastructure.
+
+**When to use alternatives:** You need long-term metric storage, dashboards, alerting pipelines, or Kubernetes-level metrics.
+
+## Use Cases
+
+**Infrastructure debugging:** Agent detects slow response times, queries `cpu_info` + `memory_detail` + `io_stats` to identify the bottleneck.
+
+**Capacity planning:** Agent periodically checks `system_overview` + `disk_usage` + `top_memory_consumers` to track resource trends.
+
+**Security monitoring:** Agent uses `login_history` + `network_connections` + `open_files` to detect unusual activity.
+
+**Service health:** Agent checks `systemd_services` for failed units, then `service_status` for logs — all in one conversation turn.
+
+**Combined with Docker MCP:** Agent queries host-level (`cpu_info`) and container-level (`container_stats`) simultaneously to correlate performance issues.
+
 ## Installation
 
 ```bash
@@ -44,6 +78,22 @@ Add to your Claude Desktop config (`claude_desktop_config.json`):
   "mcpServers": {
     "system-monitoring": {
       "command": "system-monitoring-mcp-server"
+    }
+  }
+}
+```
+
+### Claude Desktop + Docker MCP (Full Stack)
+
+```json
+{
+  "mcpServers": {
+    "system-monitoring": {
+      "command": "system-monitoring-mcp-server"
+    },
+    "docker": {
+      "command": "npx",
+      "args": ["@supernova123/docker-mcp-server"]
     }
   }
 }
@@ -124,6 +174,16 @@ CPU and system temperatures from /sys/class/thermal/thermal_zone*. Each entry in
   ]
 }
 ```
+
+## Testing
+
+67 unit tests covering all 17 tools:
+
+```bash
+npx vitest run
+```
+
+Tests mock `/proc` and `/sys` filesystem reads for deterministic results — no root required.
 
 ## Troubleshooting
 
