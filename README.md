@@ -5,7 +5,7 @@
 
 MCP server for Linux system monitoring — CPU, memory, disk, network, processes, systemd services, and system logs. Agent-native structured interface for AI assistants like Claude, Cursor, and Copilot.
 
-## Features (13 Tools)
+## Features (14 Tools)
 
 | Tool | Description |
 |------|-------------|
@@ -22,6 +22,7 @@ MCP server for Linux system monitoring — CPU, memory, disk, network, processes
 | `memory_detail` | RAM breakdown: buffers, cache, swap |
 | `top_memory_consumers` | Processes consuming most memory |
 | `io_stats` | Disk I/O statistics per block device |
+| `temperature_sensors` | CPU/system temperatures from thermal zones |
 
 ## Installation
 
@@ -108,6 +109,18 @@ Quick list of processes eating the most RAM. Returns PID, MEM%, RSS (MB), and co
 
 ### io_stats
 Per-device disk I/O: reads, writes, sectors, I/O time. From /proc/diskstats.
+
+### temperature_sensors
+CPU and system temperatures from /sys/class/thermal/thermal_zone*. Each entry includes the zone identifier, sensor name, sensor type (e.g. `x86_pkg_temp`, `cpu-thermal`), and current temperature in Celsius (converted from the kernel's millidegree units). Returns a helpful message if no thermal zones are present (common in containers/VMs).
+
+```json
+{
+  "sensors": [
+    { "zone": "thermal_zone0", "name": "x86_pkg_temp", "type": "x86_pkg_temp", "temp_celsius": 52.5 },
+    { "zone": "thermal_zone1", "name": "acpitz", "type": "acpitz", "temp_celsius": 45.0 }
+  ]
+}
+```
 
 ## Troubleshooting
 

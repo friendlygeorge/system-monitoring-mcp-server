@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.1] - 2026-06-16
+
+### Added
+- `temperature_sensors` tool — reads CPU/system temperatures from `/sys/class/thermal/thermal_zone*`, returns zone name, type, and current temperature in Celsius. Falls back to a helpful message when no thermal zones are present (e.g. containers/VMs without thermal monitoring).
+
+### Notes
+- 14 tools across 10 source files.
+
 ## [0.1.0] - 2026-06-16
 
 ### Added
