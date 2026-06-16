@@ -9,6 +9,7 @@ import { registerCpuInfoTools } from "./tools/cpu-info.js";
 import { registerMemoryDetailTools } from "./tools/memory-detail.js";
 import { registerIoStatsTools } from "./tools/io-stats.js";
 import { registerTemperatureSensorsTools } from "./tools/temperature-sensors.js";
+import { registerProcessTreeTools } from "./tools/process-tree.js";
 
 export function createServer(): McpServer {
   const server = new McpServer({
@@ -27,6 +28,7 @@ export function createServer(): McpServer {
   registerMemoryDetailTools(server);
   registerIoStatsTools(server);
   registerTemperatureSensorsTools(server);
+  registerProcessTreeTools(server);
 
   return server;
 }

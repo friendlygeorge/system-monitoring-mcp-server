@@ -8,6 +8,8 @@ import { registerSystemLogsTools } from "./tools/system-logs.js";
 import { registerCpuInfoTools } from "./tools/cpu-info.js";
 import { registerMemoryDetailTools } from "./tools/memory-detail.js";
 import { registerIoStatsTools } from "./tools/io-stats.js";
+import { registerTemperatureSensorsTools } from "./tools/temperature-sensors.js";
+import { registerProcessTreeTools } from "./tools/process-tree.js";
 export function createServer() {
     const server = new McpServer({
         name: "system-monitoring-mcp-server",
@@ -23,6 +25,8 @@ export function createServer() {
     registerCpuInfoTools(server);
     registerMemoryDetailTools(server);
     registerIoStatsTools(server);
+    registerTemperatureSensorsTools(server);
+    registerProcessTreeTools(server);
     return server;
 }
 //# sourceMappingURL=server.js.map

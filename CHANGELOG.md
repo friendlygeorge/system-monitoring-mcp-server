@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.2] - 2026-06-16
+
+### Added
+- `process_tree` tool — shows process hierarchy (parent-child relationships) using pstree or /proc fallback. Supports root PID selection, max depth control, and optional PID display. Useful for debugging service dependencies and understanding what spawned what.
+
+### Notes
+- 15 tools across 11 source files.
+
 ## [0.1.1] - 2026-06-16
 
 ### Added

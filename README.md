@@ -5,7 +5,7 @@
 
 MCP server for Linux system monitoring — CPU, memory, disk, network, processes, systemd services, and system logs. Agent-native structured interface for AI assistants like Claude, Cursor, and Copilot.
 
-## Features (14 Tools)
+## Features (15 Tools)
 
 | Tool | Description |
 |------|-------------|
@@ -23,6 +23,7 @@ MCP server for Linux system monitoring — CPU, memory, disk, network, processes
 | `top_memory_consumers` | Processes consuming most memory |
 | `io_stats` | Disk I/O statistics per block device |
 | `temperature_sensors` | CPU/system temperatures from thermal zones |
+| `process_tree` | Process tree hierarchy (parent-child relationships) |
 
 ## Installation
 
