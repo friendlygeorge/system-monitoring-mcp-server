@@ -10,6 +10,8 @@ import { registerMemoryDetailTools } from "./tools/memory-detail.js";
 import { registerIoStatsTools } from "./tools/io-stats.js";
 import { registerTemperatureSensorsTools } from "./tools/temperature-sensors.js";
 import { registerProcessTreeTools } from "./tools/process-tree.js";
+import { registerOpenFilesTools } from "./tools/open-files.js";
+import { registerLoginHistoryTools } from "./tools/login-history.js";
 
 export function createServer(): McpServer {
   const server = new McpServer({
@@ -29,6 +31,8 @@ export function createServer(): McpServer {
   registerIoStatsTools(server);
   registerTemperatureSensorsTools(server);
   registerProcessTreeTools(server);
+  registerOpenFilesTools(server);
+  registerLoginHistoryTools(server);
 
   return server;
 }

@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.1.3] - 2026-06-16
+
+### Added
+- `open_files` tool — lists open file descriptors for a process by reading /proc/{pid}/fd symlinks. Shows FD number, target path, and file type (device, socket, pipe, file). Useful for debugging file handle leaks and understanding what a process has open.
+- `login_history` tool — shows login/logout history from wtmp/btmp logs via the `last` command. Supports username filtering, failed login attempts, and configurable entry limits. Useful for security auditing and access tracking.
+
+### Notes
+- 17 tools across 13 source files.
+
 ## [0.1.2] - 2026-06-16
 
 ### Added

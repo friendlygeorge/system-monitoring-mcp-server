@@ -24,6 +24,8 @@ MCP server for Linux system monitoring — CPU, memory, disk, network, processes
 | `io_stats` | Disk I/O statistics per block device |
 | `temperature_sensors` | CPU/system temperatures from thermal zones |
 | `process_tree` | Process tree hierarchy (parent-child relationships) |
+| `open_files` | List open files for a process via /proc/{pid}/fd symlinks |
+| `login_history` | Login/logout history from wtmp/btmp logs |
 
 ## Installation
 
