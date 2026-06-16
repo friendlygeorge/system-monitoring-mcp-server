@@ -16,7 +16,7 @@ import { registerLoginHistoryTools } from "./tools/login-history.js";
 export function createServer(): McpServer {
   const server = new McpServer({
     name: "system-monitoring-mcp-server",
-    version: "0.1.0",
+    version: "0.1.4",
   });
 
   // Register all tool categories

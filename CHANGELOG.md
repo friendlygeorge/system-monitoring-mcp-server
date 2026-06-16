@@ -1,3 +1,9 @@
+## [0.1.4] - 2026-06-16
+
+### Fixed
+- README and glama.json tool count corrected from 13/15 to 17 (actual registered tools)
+- server.ts version field updated to match package.json
+
 # Changelog
 
 ## [0.1.3] - 2026-06-16
