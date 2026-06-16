@@ -12,7 +12,7 @@ Most system monitoring tools (Prometheus, Grafana, Netdata) are designed for das
 
 **Companion server:** [Docker MCP Server](https://github.com/friendlygeorge/docker-mcp-server) for container-level monitoring. This server handles host-level monitoring. Together they cover the full infrastructure stack.
 
-## Features (17 Tools)
+## Features (18 Tools)
 
 | Tool | Description |
 |------|-------------|
@@ -22,6 +22,7 @@ Most system monitoring tools (Prometheus, Grafana, Netdata) are designed for das
 | `inode_usage` | Inode consumption per filesystem |
 | `network_interfaces` | Interface stats, IPs, traffic counters |
 | `network_connections` | Active TCP/UDP connections with states |
+| `network_diagnostics` | DNS resolution, latency (ping), and download speed test |
 | `systemd_services` | Service status (active/failed/inactive) |
 | `service_status` | Detailed service info with recent logs |
 | `system_logs` | Journald logs with service/priority/time filters |

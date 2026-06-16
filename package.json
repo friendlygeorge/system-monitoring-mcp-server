@@ -1,6 +1,6 @@
 {
   "name": "@supernova123/system-monitoring-mcp-server",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "mcpName": "io.github.friendlygeorge/system-monitoring-mcp-server",
   "description": "MCP server for Linux system monitoring \u2014 CPU, memory, disk, network, processes, systemd services, and system logs for Claude, Cursor, and AI agents",
   "type": "module",

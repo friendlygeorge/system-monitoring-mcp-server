@@ -1,3 +1,14 @@
+## [0.1.6] - 2026-06-16
+
+### Added
+- `network_diagnostics` tool: DNS resolution, latency (ping), download speed test, and network interface summary in one call
+- 5 unit tests for network_diagnostics (mocked nslookup, ping, curl, ip)
+- CONTRIBUTING.md development guide
+
+### Changed
+- Tool count: 17 → 18
+- Test count: 67 → 72
+
 ## [0.1.5] - 2026-06-16
 
 ### Added

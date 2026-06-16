@@ -12,11 +12,12 @@ import { registerTemperatureSensorsTools } from "./tools/temperature-sensors.js"
 import { registerProcessTreeTools } from "./tools/process-tree.js";
 import { registerOpenFilesTools } from "./tools/open-files.js";
 import { registerLoginHistoryTools } from "./tools/login-history.js";
+import { registerNetworkSpeedTools } from "./tools/network-speed.js";
 
 export function createServer(): McpServer {
   const server = new McpServer({
     name: "system-monitoring-mcp-server",
-    version: "0.1.5",
+    version: "0.1.6",
   });
 
   // Register all tool categories
@@ -33,6 +34,7 @@ export function createServer(): McpServer {
   registerProcessTreeTools(server);
   registerOpenFilesTools(server);
   registerLoginHistoryTools(server);
+  registerNetworkSpeedTools(server);
 
   return server;
 }
