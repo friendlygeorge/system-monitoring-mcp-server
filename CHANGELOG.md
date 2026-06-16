@@ -1,3 +1,14 @@
+## [0.1.7] - 2026-06-16
+
+### Added
+- `system_info` tool: OS identification (kernel, architecture, hostname, distro, timezone, NTP status, optional package count)
+- 5 unit tests for system_info (mocked fs and child_process)
+- CONTRIBUTING.md development guide
+
+### Changed
+- Tool count: 18 → 19
+- Test count: 72 → 77
+
 ## [0.1.6] - 2026-06-16
 
 ### Added
