@@ -1,0 +1,34 @@
+{
+  "$schema": "https://glama.ai/schemas/glama.json",
+  "maintainers": [
+    "friendlygeorge"
+  ],
+  "title": "System Monitoring MCP Server",
+  "description": "13 tools for AI agent Linux system monitoring — CPU, memory, disk, network, processes, systemd services, system logs, and I/O stats. Agent-native host-level monitoring complement to Docker MCP.",
+  "tags": [
+    "system-monitoring",
+    "linux",
+    "mcp",
+    "cpu",
+    "memory",
+    "disk",
+    "network",
+    "processes",
+    "systemd",
+    "logs",
+    "devops",
+    "ai-agents",
+    "typescript"
+  ],
+  "repository": "https://github.com/friendlygeorge/system-monitoring-mcp-server",
+  "license": "MIT",
+  "categories": [
+    "monitoring",
+    "developer-tools"
+  ],
+  "language": "TypeScript",
+  "runtime": "node",
+  "relatedServers": [
+    "https://github.com/friendlygeorge/docker-mcp-server"
+  ]
+}

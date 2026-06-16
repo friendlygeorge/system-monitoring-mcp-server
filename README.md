@@ -1,14 +1,18 @@
 # System Monitoring MCP Server
 
+[![npm](https://img.shields.io/npm/v/@supernova123/system-monitoring-mcp-server)](https://www.npmjs.com/package/@supernova123/system-monitoring-mcp-server)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 MCP server for Linux system monitoring — CPU, memory, disk, network, processes, systemd services, and system logs. Agent-native structured interface for AI assistants like Claude, Cursor, and Copilot.
 
-## Features (9 Tools)
+## Features (13 Tools)
 
 | Tool | Description |
 |------|-------------|
 | `system_overview` | Complete system snapshot: CPU load, memory, disk, uptime |
 | `process_list` | Top processes by CPU or memory usage |
 | `disk_usage` | Filesystem usage with inode counts |
+| `inode_usage` | Inode consumption per filesystem |
 | `network_interfaces` | Interface stats, IPs, traffic counters |
 | `network_connections` | Active TCP/UDP connections with states |
 | `systemd_services` | Service status (active/failed/inactive) |
@@ -104,6 +108,26 @@ Quick list of processes eating the most RAM. Returns PID, MEM%, RSS (MB), and co
 
 ### io_stats
 Per-device disk I/O: reads, writes, sectors, I/O time. From /proc/diskstats.
+
+## Troubleshooting
+
+### Permission denied on /proc or /sys
+Most tools read from `/proc` and `/sys` which are world-readable. If you see permission errors, check that your user can read these paths:
+```bash
+ls -la /proc/stat /proc/meminfo /proc/diskstats
+```
+
+### systemd tools return empty
+The `systemd_services` and `service_status` tools require `systemctl` to be available. On systems without systemd (e.g., Docker containers, Alpine Linux), these tools will return empty results. The server will still function for non-systemd tools.
+
+### Journal access denied
+`system_logs` reads from journald. If you get permission errors, your user may need to be in the `systemd-journal` group:
+```bash
+sudo usermod -aG systemd-journal $USER
+```
+
+### High CPU usage
+The server reads live data from `/proc` on each tool call. Under normal usage this is negligible. If you're polling frequently (every second), consider using `system_overview` instead of individual tools to reduce overhead.
 
 ## License
 
