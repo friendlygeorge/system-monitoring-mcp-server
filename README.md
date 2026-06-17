@@ -177,6 +177,21 @@ CPU and system temperatures from /sys/class/thermal/thermal_zone*. Each entry in
 }
 ```
 
+### system_info
+OS identification: kernel version, architecture, hostname, distribution, time zone, and NTP status. Use this to understand what system you're working on before running other commands.
+
+### network_diagnostics
+Run network diagnostics: DNS resolution, latency (ping), and download speed test. Returns structured results for each test. Useful for diagnosing connectivity issues, measuring bandwidth, and verifying DNS health.
+
+### login_history
+Show login/logout history from wtmp/btmp logs using the `last` command. Shows who logged in, from where, when, and session duration. Useful for security auditing, tracking access patterns, and debugging session issues.
+
+### open_files
+List open files for a given process by reading `/proc/{pid}/fd` symlinks. Shows file descriptors, target paths, and file types. Useful for debugging file handle leaks, understanding what a process has open, and diagnosing permission issues.
+
+### process_tree
+Show process tree (parent-child hierarchy) using pstree or /proc. Useful for understanding service dependencies, debugging runaway processes, and seeing what spawned what.
+
 ## Testing
 
 77 unit tests covering all 19 tools:
