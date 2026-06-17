@@ -26,6 +26,7 @@ Most system monitoring tools (Prometheus, Grafana, Netdata) are designed for das
 | `systemd_services` | Service status (active/failed/inactive) |
 | `service_status` | Detailed service info with recent logs |
 | `system_logs` | Journald logs with service/priority/time filters |
+| `system_info` | OS, kernel, hostname, architecture details |
 | `cpu_info` | CPU model, cores, frequency, current usage |
 | `memory_detail` | RAM breakdown: buffers, cache, swap |
 | `top_memory_consumers` | Processes consuming most memory |
@@ -42,7 +43,7 @@ Most system monitoring tools (Prometheus, Grafana, Netdata) are designed for das
 | **MCP native** | ✅ stdio | ❌ HTTP/REST | ❌ HTTP/REST | ❌ HTTP/REST |
 | **Agent-ready JSON** | ✅ structured | ⚠️ Prometheus format | ⚠️ JSON but nested | ⚠️ InfluxDB line protocol |
 | **Zero config** | ✅ | ❌ needs scraping | ❌ needs agent install | ❌ needs config file |
-| **Tool count** | 17 | ~200 metrics | ~1,000 metrics | ~300 inputs |
+| **Tool count** | 19 | ~200 metrics | ~1,000 metrics | ~300 inputs |
 | **Install weight** | ~5 MB | ~30 MB binary | ~200 MB | ~100 MB |
 | **Dependencies** | Node.js | None | C, many libs | Go |
 
