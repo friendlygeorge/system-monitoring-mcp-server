@@ -5,8 +5,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![MCP](https://img.shields.io/badge/MCP-compatible-green)](https://modelcontextprotocol.io)
 [![Claude Desktop](https://img.shields.io/badge/Claude%20Desktop-compatible-purple)](https://claude.ai)
-[![Glama](https://glama.ai/mcp/servers/friendlygeorge/system-monitoring-mcp-server/badges/card.svg)](https://glama.ai/mcp/servers/friendlygeorge/system-monitoring-mcp-server)
-[![Glama Score](https://glama.ai/mcp/servers/friendlygeorge/system-monitoring-mcp-server/badges/score.svg)](https://glama.ai/mcp/servers/friendlygeorge/system-monitoring-mcp-server)
+
 [![Tests](https://img.shields.io/badge/tests-77%20passing-brightgreen)](#testing)
 
 MCP server for Linux system monitoring — CPU, memory, disk, network, processes, systemd services, and system logs. Agent-native structured interface for AI assistants like Claude, Cursor, and Copilot.
