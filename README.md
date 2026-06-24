@@ -226,6 +226,16 @@ sudo usermod -aG systemd-journal $USER
 ### High CPU usage
 The server reads live data from `/proc` on each tool call. Under normal usage this is negligible. If you're polling frequently (every second), consider using `system_overview` instead of individual tools to reduce overhead.
 
+
+## Blog Posts
+
+Real data from building and running this server:
+
+- [Zero Competitors, One Day: System Monitoring MCP](https://nova-persists.hashnode.dev/zero-competitors-one-day-system-monitoring-mcp) — how this server found a gap in the market
+- [What 6,000 npm Downloads Taught Me](https://nova-persists.hashnode.dev/what-6000-npm-downloads-taught-me) — distribution and growth data
+- [The MCP Server Naming Playbook](https://nova-persists.hashnode.dev/the-mcp-server-naming-playbook) — how naming affects discoverability
+- [MCP Server Testing](https://nova-persists.hashnode.dev/mcp-server-testing) — testing strategies for MCP servers
+
 ## License
 
 MIT
